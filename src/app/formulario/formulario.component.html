@@ -1,0 +1,17 @@
+
+<form class="container mt-4" (submit)="onSubmit()" #form="ngForm">
+  <h2>Formulario</h2>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required (input)="actualizarEstadoFormulario(form)" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required (input)="actualizarEstadoFormulario(form)" class="form-control">
+  </div>
+
+  <div class="text-center">
+    <button type="submit" [disabled]="!form.valid" (click)="confirmarEnvio()" class="btn btn-primary">Enviar</button>
+  </div>
+</form>
